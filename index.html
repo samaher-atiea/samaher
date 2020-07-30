@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0"/>
+    <title>samaher</title>
+</head>
+<body>
+ <form>
+<input name="email" type="email" required oninvalid="error_message(this)" oninput="error_message(this)"/>
+<input name="sms" type="text" required oninvalid="error_message1(this)" oninput="error_message1(this)"/>
+<br>
+<select name="language" required oninvalid="this.setCustomvalidity('رجاء قم بتحديداحد الخيارات')">
+<option value=""> اخترلغتك</option>
+<option value=" arabic"> العربية</option>
+<option value=" english"> الانجليزية</option>
+</select>
+<button type="submit"> تسجيل </button>
+
+ </form> 
+ <script>
+     function error_message( input){
+if( input.value==''){
+input.setcustomvalidity('رجاء قم بتعبئه البيانات');
+}else if(input.validity.typeMismatch){
+    input.setcustomvalidity("رجاء تعبئة بيانات صالحة");}
+     input.setcustomvalidity('قم بتجربة بريد مختلف');}
+     else{
+         input.setcustomvalidity(''); }
+    return true;
+     }
+     
+     
+ function error_message1( input){
+if( input.value==''){
+     input.setCustomvalidity('رجاء قم بوضع رسالة');
+} else if (input.validity.typeMismatch){
+      input.setCustomvalidity('رجاء تعبئة بيانات صالحة');
+      }
+     else{
+         input.setCustomvalidity(''); }
+    return true;
+     }
+     
+ </script>  
+</body>
+</html>
